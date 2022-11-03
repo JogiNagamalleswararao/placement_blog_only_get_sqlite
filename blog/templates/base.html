@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            text-align: center;
+            text-decoration: none;
+            color: green;
+        }
+        body {  font-family: 'Raleway',sans-serif; 
+        }
+        h1,h2{
+            text-align: center;
+            
+        }
+        img{
+            margin: 30px;
+        } 
+        #re{
+            color: red;
+        }   
+        table {
+        
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 20px;
+        }
+
+        td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        }
+
+        tr:nth-child(even) {
+        background-color: #dddddd;
+        }
+        h4{
+            margin-top: 60px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    
+    <h1>PLACMENT POINT</h1>
+    <h2>2023</h2>
+{% block content %}
+   <hr>
+   {% for i in post1 %}
+   <img src="{{i.image}}">
+   
+
+<table>
+    <tr>
+      <th>JOB</th>
+      <th>DETAILS</th>
+    </tr>
+    <tr>
+      <td>Company</td>
+      <td>{{i.Com}}</td>
+      
+    </tr>
+    <tr>
+      <td>Role</td>
+      <td>{{i.Rol}}</td>
+      
+    </tr>
+    <tr>
+      <td>Batch</td>
+      <td>2023</td>
+      
+    </tr>
+    <tr>
+      <td>Education</td>
+      <td>{{i.Edu}}</td>
+      
+    </tr>
+    <tr>
+      <td>Salary</td>
+      <td>{{i.Sal}}</td>
+      
+    </tr>
+    <tr>
+      <td>Experience</td>
+      <td>{{i.Exp}}</td>
+      
+    </tr>
+    <tr>
+      <td>Last date</td>
+      <td id="re">{{i.Las}}</td>
+      
+    </tr>
+    <tr>
+      <td>Location</td>
+      <td>{{i.Loc}}</td>
+      
+    </tr>
+  </table>
+  <h3>JOB DESCRIPTION: <br></h3>{{i.describe}} <br>
+  <h4>LINK: <a href="{{i.create_at}}">APPLY NOW</a></h3>
+  <hr>
+  {% endfor %}
+  {% endblock content %}
+</body>
+</html>
